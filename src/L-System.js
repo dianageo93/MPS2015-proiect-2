@@ -1,5 +1,16 @@
 // L-System generating class
 
+var defaultOptions = {
+    depth: 3,
+    leftAngle: 22,
+    rightAngle: 22,
+    rules: {
+        'F':'FF',
+        'X':'F-[[X]+X]+F[+FX]-X'
+    },
+    start: 'X'
+};
+
 function LSystem(options) {
     this.depth = options.depth;
     this.leftAngle = options.leftAngle;
