@@ -12,5 +12,9 @@ function DrawUtils () {
     this.stateStack.push(new State(0, {x: canvas.clientWidth / 2, y: canvas.clientHeight}));
 }
 
-DrawUtils.prototype.draw(lSystem) {
+DrawUtils.prototype.draw = function (lSystem) {
+}
+
+function tryParameters () {
+    console.log("okay");
 }
