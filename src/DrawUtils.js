@@ -13,19 +13,5 @@ function DrawUtils () {
 }
 
 DrawUtils.prototype.draw = function (lSystem) {
-}
-
-window.addEventListener('load', onloadHandler, false);
-function onloadHandler () {
-    // bind ENTER key handler to Start button
-    document.onkeyup = function(event) {
-        var keyCode = (event === null ? window.event.keyCode :
-                event.keyCode);
-        if (keyCode === 13) {
-            tryParameters();
-        }
-    };
-}
-
-function tryParameters () {
+    console.log(lSystem);
 }

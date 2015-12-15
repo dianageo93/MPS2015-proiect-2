@@ -10,7 +10,7 @@ function onloadHandler () {
     };
 }
 
-function tryParameters () {
+function extractParams () {
     var options = defaultOptions;
     if (document.getElementById('depth').value) {
         options.depth = parseInt(document.getElementById('depth').value);
@@ -39,5 +39,14 @@ function tryParameters () {
         }
     }
 
-    console.log(options);
+    return options;
+}
+
+function tryParameters () {
+    var options = extractParams();
+    var lsys = new LSystem(options);
+    var drawUtils = new DrawUtils();
+    var tree = lsys.generate();
+
+    drawUtils.draw(tree);
 }
