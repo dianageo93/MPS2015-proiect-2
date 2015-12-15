@@ -1,0 +1,22 @@
+{
+  "name": "MPS2015-proiect-2",
+  "version": "0.0.1",
+  "description": "Image generator",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dianageo93/MPS2015-proiect-2.git"
+  },
+  "author": "Echipa de la 8 @ MPS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dianageo93/MPS2015-proiect-2/issues"
+  },
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1"
+  }
+}
