@@ -48,5 +48,5 @@ function tryParameters () {
     var drawUtils = new DrawUtils();
     var tree = lsys.generate();
 
-    drawUtils.draw(tree);
+    drawUtils.draw(tree, options);
 }
