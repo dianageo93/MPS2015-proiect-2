@@ -1,7 +1,7 @@
 // L-System generating class
 
 var defaultOptions = {
-    depth: 3,
+    depth: 5,
     leftAngle: 22,
     rightAngle: 22,
     rules: {

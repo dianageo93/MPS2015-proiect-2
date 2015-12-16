@@ -11,10 +11,11 @@ function State (angle, startCoords, specs) {
 function DrawUtils () {
     var canvas = document.getElementById('forest');
     this.context = canvas.getContext('2d');
+    this.context.clearRect(0, 0, canvas.width, canvas.height);
     this.stateStack = [];
     this.stateStack.push(new State(
                 0,
-                {x: canvas.clientWidth / 2, y: canvas.clientHeight / 2},
+                {x: canvas.clientWidth / 2, y: canvas.clientHeight},
                 {lineLength: 2}));
 }
 
@@ -48,8 +49,18 @@ DrawUtils.prototype.drawLine = function (state) {
     var newy = state.startCoords.y - deltay;
 
     this.context.lineTo(newx, newy);
+    this.context.closePath();
     this.context.stroke();
 
     state.startCoords.x = newx;
     state.startCoords.y = newy;
+}
+
+window.addEventListener('load', onCanvasResize, false);
+window.addEventListener('resize', onCanvasResize, false);
+
+function onCanvasResize () {
+    var canvas = document.getElementById('forest');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
