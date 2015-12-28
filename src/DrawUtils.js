@@ -8,7 +8,7 @@ function State (angle, startCoords, specs) {
     this.specs = specs;
 }
 
-function DrawUtils () {
+function DrawUtils (options) {
     var canvas = document.getElementById('forest');
     this.context = canvas.getContext('2d');
     this.context.clearRect(0, 0, canvas.width, canvas.height);
@@ -16,7 +16,7 @@ function DrawUtils () {
     this.stateStack.push(new State(
                 0,
                 {x: canvas.clientWidth / 2, y: canvas.clientHeight},
-                {lineLength: 2}));
+                {lineLength: options['lineLength']}));
 }
 
 DrawUtils.prototype.draw = function (lSystem, options) {

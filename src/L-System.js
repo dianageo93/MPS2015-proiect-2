@@ -8,7 +8,8 @@ var defaultOptions = {
         'F':'FF',
         'X':'F-[[X]+X]+F[+FX]-X'
     },
-    start: 'X'
+    start: 'X',
+    lineLength: 2
 };
 
 function LSystem(options) {

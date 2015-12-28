@@ -24,6 +24,9 @@ function extractParams () {
     if (document.getElementById('start').value) {
         options.start = document.getElementById('start').value;
     }
+    if (document.getElementById('lineLength').value) {
+        options.lineLength = document.getElementById('lineLength').value;
+    }
 
     var changed = false;
     for (var i = 1; i <=3; i++) {
@@ -45,7 +48,7 @@ function extractParams () {
 function tryParameters () {
     var options = extractParams();
     var lsys = new LSystem(options);
-    var drawUtils = new DrawUtils();
+    var drawUtils = new DrawUtils(options);
     var tree = lsys.generate();
 
     drawUtils.draw(tree, options);
