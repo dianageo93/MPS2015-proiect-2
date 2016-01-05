@@ -10,7 +10,8 @@ var defaultOptions = {
         'X':'F-[[X]+X]+F[+FX]-X'
     },
     start: 'X',
-    lineLength: 2
+    lineLength: 2,
+    color: '#000000'
 };
 
 window.addEventListener('load', function () {
@@ -25,6 +26,7 @@ window.addEventListener('load', function () {
         options.rules = options.r || defaultOptions.rules;
         options.start = options.s || defaultOptions.start;
         options.lineLength = options.ll || defaultOptions.lineLength;
+        options.color = options.c || defaultOptions.color;
 
         var lsys = new LSystem(options);
         var tree = lsys.generate();

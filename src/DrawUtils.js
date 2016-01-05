@@ -39,13 +39,13 @@ DrawUtils.prototype.draw = function (lSystem, options) {
         } else if (lSystem[i] === '-') {
             currState.angle += options.leftAngle;
         } else if (lSystem[i] === 'F') {
-            this.drawLine(currState);
+            this.drawLine(currState, options.color);
         }
     }
     console.log('done');
 }
 
-DrawUtils.prototype.drawLine = function (state) {
+DrawUtils.prototype.drawLine = function (state, color) {
     this.context.beginPath();
     this.context.moveTo(state.startCoords.x, state.startCoords.y);
 
@@ -57,6 +57,7 @@ DrawUtils.prototype.drawLine = function (state) {
 
     this.context.lineTo(newx, newy);
     this.context.closePath();
+    this.context.strokeStyle = color;
     this.context.stroke();
 
     state.startCoords.x = newx;
