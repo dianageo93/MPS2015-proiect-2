@@ -16,15 +16,15 @@ var defaultOptions = {
 window.addEventListener('load', function () {
     var drawUtils = new DrawUtils();
     seed.forEach(function(options) {
-        options.depth = options.depth || defaultOptions.depth;
-        options.startAngle = options.startAngle || defaultOptions.startAngle;
-        options.leftAngle = options.leftAngle || defaultOptions.leftAngle;
-        options.rightAngle = options.rightAngle || defaultOptions.rightAngle;
+        options.depth = options.d || defaultOptions.depth;
+        options.startAngle = options.sa || defaultOptions.startAngle;
+        options.leftAngle = options.la || defaultOptions.leftAngle;
+        options.rightAngle = options.ra || defaultOptions.rightAngle;
         options.x = options.x || defaultOptions.x;
         options.y = options.y || defaultOptions.y;
-        options.rules = options.rules || defaultOptions.rules;
-        options.start = options.start || defaultOptions.start;
-        options.lineLength = options.lineLength || defaultOptions.lineLength;
+        options.rules = options.r || defaultOptions.rules;
+        options.start = options.s || defaultOptions.start;
+        options.lineLength = options.ll || defaultOptions.lineLength;
 
         var lsys = new LSystem(options);
         var tree = lsys.generate();
