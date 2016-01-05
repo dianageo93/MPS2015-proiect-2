@@ -11,7 +11,6 @@ function State (angle, startCoords, specs) {
 function DrawUtils (options) {
     var canvas = document.getElementById('forest');
     this.context = canvas.getContext('2d');
-    this.context.clearRect(0, 0, canvas.width, canvas.height);
     this.stateStack = [];
     this.stateStack.push(new State(
                 0,

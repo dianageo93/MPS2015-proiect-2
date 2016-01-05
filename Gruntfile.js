@@ -9,7 +9,8 @@ module.exports = function(grunt) {
                     'src/Seed.js',
                     'src/L-System.js',
                     'src/DrawUtils.js',
-                    'src/InputHandler.js'
+                    'src/InputHandler.js',
+                    'src/Main.js',
                 ],
                 dest: 'dist/van-gogu.js'
             }
