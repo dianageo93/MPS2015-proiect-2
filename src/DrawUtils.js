@@ -8,17 +8,25 @@ function State (angle, startCoords, specs) {
     this.specs = specs;
 }
 
-function DrawUtils (options) {
-    var canvas = document.getElementById('forest');
-    this.context = canvas.getContext('2d');
-    this.stateStack = [];
-    this.stateStack.push(new State(
-                0,
-                {x: canvas.clientWidth / 2, y: canvas.clientHeight},
-                {lineLength: options['lineLength']}));
+function DrawUtils () {
+    this.canvas = document.getElementById('forest');
+    this.context = this.canvas.getContext('2d');
 }
 
 DrawUtils.prototype.draw = function (lSystem, options) {
+    var startState = new State(
+        options.startAngle,
+        {
+            x: this.canvas.clientWidth * options.x / 100,
+            y: this.canvas.clientHeight * options.y / 100
+        },
+        {
+            lineLength: options.lineLength
+        }
+    );
+    this.stateStack = [];
+    this.stateStack.push(startState);
+
     var currState = this.stateStack.pop();
     for (var i = 0; i < lSystem.length; i++) {
         if (lSystem[i] === '[') {
@@ -34,7 +42,7 @@ DrawUtils.prototype.draw = function (lSystem, options) {
             this.drawLine(currState);
         }
     }
-    console.log("gata");
+    console.log('done');
 }
 
 DrawUtils.prototype.drawLine = function (state) {
