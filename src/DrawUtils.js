@@ -49,9 +49,9 @@ DrawUtils.prototype.drawLine = function (state) {
     this.context.beginPath();
     this.context.moveTo(state.startCoords.x, state.startCoords.y);
 
-    var angleToRads = state.angle * Math.PI / 180;
-    var deltax = state.specs.lineLength * Math.sin(angleToRads);
-    var deltay = state.specs.lineLength * Math.cos(angleToRads);
+    var angleInRads = state.angle * Math.PI / 180;
+    var deltax = state.specs.lineLength * Math.sin(angleInRads);
+    var deltay = state.specs.lineLength * Math.cos(angleInRads);
     var newx = state.startCoords.x - deltax;
     var newy = state.startCoords.y - deltay;
 
