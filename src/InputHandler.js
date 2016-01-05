@@ -13,19 +13,19 @@ function onloadHandler () {
 function extractParams () {
     var options = defaultOptions;
     if (document.getElementById('depth').value) {
-        options.depth = parseInt(document.getElementById('depth').value);
+        options.depth = parseInt(parseInt(document.getElementById('depth').value));
     }
     if (document.getElementById('leftAngle').value) {
-        options.leftAngle = document.getElementById('leftAngle').value;
+        options.leftAngle = parseInt(document.getElementById('leftAngle').value);
     }
     if (document.getElementById('rightAngle').value) {
-        options.rightAngle = document.getElementById('rightAngle').value;
+        options.rightAngle = parseInt(document.getElementById('rightAngle').value);
     }
     if (document.getElementById('start').value) {
         options.start = document.getElementById('start').value;
     }
     if (document.getElementById('lineLength').value) {
-        options.lineLength = document.getElementById('lineLength').value;
+        options.lineLength = parseInt(document.getElementById('lineLength').value);
     }
 
     var changed = false;
