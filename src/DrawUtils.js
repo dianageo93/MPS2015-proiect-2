@@ -11,6 +11,15 @@ function State (angle, startCoords, specs) {
 function DrawUtils () {
     this.canvas = document.getElementById('forest');
     this.context = this.canvas.getContext('2d');
+
+    // gradient fill
+    var startY = this.canvas.clientHeight * 0.6;
+    var endY = this.canvas.clientHeight;
+    var myGradient = this.context.createLinearGradient(0, startY, 0, endY);
+    myGradient.addColorStop(0, 'rgba(8, 2, 14, 0.76)');
+    myGradient.addColorStop(1, 'rgba(116, 108, 123, 0.76)');
+    this.context.fillStyle = myGradient;
+    this.context.fillRect(0, startY, this.canvas.clientWidth, endY);
 }
 
 DrawUtils.prototype.draw = function (lSystem, options) {

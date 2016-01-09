@@ -11,7 +11,7 @@ var defaultOptions = {
     },
     start: 'X',
     lineLength: 2,
-    color: '#000000'
+    color: '#FFFFFF'
 };
 
 function fillOptions(options) {
