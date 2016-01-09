@@ -1,4 +1,4 @@
-varseeds=[
+s=[
 {
 lsys:[
 {d:2,r:{X:'F[X]+F[X]+F[X]+F[X]+F[X]',F:'FF'},la:145,ra:145,ll:3,c:'#edde38'}

@@ -29,7 +29,7 @@ function fillOptions(options) {
 
 window.addEventListener('load', function () {
     var drawUtils = new DrawUtils();
-    seeds.forEach(function(seed) {
+    s.forEach(function(seed) {
         var minX = seed.a[0];
         var maxX = seed.a[1];
         var minY = seed.a[2];
